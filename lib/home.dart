@@ -1,3 +1,4 @@
+import 'package:bloc_application/bloc/counter_bloc.dart';
 import 'package:bloc_application/changeVal.dart';
 import 'package:bloc_application/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +14,8 @@ class MYHome extends StatefulWidget {
 class _MYHomeState extends State<MYHome> {
   @override
   Widget build(BuildContext context) {
-    final counterState = BlocProvider.of<CounterCubit>(context);
-
-    return BlocBuilder<CounterCubit, int>(
-        bloc: counterState,
+  
+    return BlocBuilder<CounterBloc, int>(
         builder: (context, counter) {
           return Scaffold(
               appBar: AppBar(
